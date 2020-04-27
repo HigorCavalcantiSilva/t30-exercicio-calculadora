@@ -4,45 +4,132 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculadora</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style type="text/css">
+            body {
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                background-color: whitesmoke;
+            }
+            div>button {
+                border-radius: 10px;
+                border: 2px solid black;
+                font-weight: bold;
+                font-size: 18px;
+                width: 150px;
+                height: 50px;
+                margin-bottom: 10px;
+                outline: none;
+                background-color: #CCC;
+            }
+
+            input {
+                padding-left: 7px;
+                border-radius: 10px;
+                outline: none;
+                width: 145px;
+                height: 40px;
+                border: 1px solid black;
+            }
+
+            div>label {
+                border: 1px solid slategray;
+                background-color: lightslategrey;
+                color: darkslateblue;
+                font-size: 13px;
+                border-radius: 4px;
+                margin-left: 12px;
+            }
+
+            div>h3 {
+                padding-top: 20px;
+                color: white;
+                background-color: midnightblue;
+                width: 200px;
+                height: 70px;
+                text-align: center;
+            }
+        </style>
+        <script>
+
+            function somar() {
+                let n1 = parseInt(campo1.value)
+                let n2 = parseInt(campo2.value)
+                let s = n1 + n2
+                // window.alert(s)
+                resultado.innerText = s
+            }
+
+            function subtrair() {
+                let n1 = parseInt(campo1.value)
+                let n2 = parseInt(campo2.value)
+                let s = n1 - n2
+                // window.alert(s)
+                resultado.innerText = s
+            }
+
+            function multiplicar() {
+                let n1 = parseInt(campo1.value)
+                let n2 = parseInt(campo2.value)
+                let s = n1 * n2
+                // window.alert(s)
+                resultado.innerText = s
+            }
+
+            function dividir() {
+                let n1 = parseInt(campo1.value)
+                let n2 = parseInt(campo2.value)
+                let s = n1 / n2
+                // window.alert(s)
+                resultado.innerText = s
+            }
+
+        </script>
     </head>
-    <body>
+    <body class="container">
         
-        <h1>Calculadora</h1>
-        
-        <div>
-            <div>
-                <label>Primeiro Número:</label>
+            <h1>Calculadora</h1>
+            
+            <div class="row" style="width: 50%;">
+                <div class="col-md-6">
+                    <div>
+                        <label>Primeiro Número:</label>
+                    </div>
+                    <div>
+                        <input id="campo1" placeholder="Insira um número" type="number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>                
+                        <label>Segundo Número:</label>
+                    </div>
+                    <div>
+                        <input id="campo2" placeholder="Insira um número" type="number">
+                    </div>
+                </div>
             </div>
-            <div>
-                <input placeholder="Insira um número" type="number">
-            </div>
-        </div>
-        <div>
-            <div>                
-                <label>Segundo Número:</label>
-            </div>
-            <div>
-                <input placeholder="Insira um número" type="number">
-            </div>
-        </div>
 
-        <div>
-            <div>
-                <button>Somar (+)</button>
-            </div>
-            <div>
-                <button>Subtrair (-)</button>
-            </div>
-            <div>
-                <button>Multiplicar (x)</button>
-            </div>
-            <div>
-                <button>Dividir (÷)</button>
-            </div>
-        </div>
+            <br><br><br>
 
-        <div>
-            <h3>Resultado...</h3>
-        </div>
+            <div class="row" style="width: 50%;">
+                <div class="col-md-6">
+                    <button onclick="somar()">Somar (+)</button>
+                </div>
+                <div class="col-md-6">
+                    <button onclick="subtrair()">Subtrair (-)</button>
+                </div>
+            </div>
+            <div class="row" style="width: 50%;">
+                <div class="col-md-6">
+                    <button onclick="multiplicar()">Multiplicar (x)</button>
+                </div>
+                <div class="col-md-6">
+                    <button onclick="dividir()">Dividir (÷)</button>
+                </div>
+            </div>
+
+            <div>
+                <h3 id="resultado">Resultado...</h3>
+            </div>
+            
     </body>
 </html>

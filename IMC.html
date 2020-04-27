@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 1 - IMC</title>
+    </head>
+    <script>
+
+        function calcIMC(){
+            p = peso.value
+            a = altura.value
+
+            imc = p / (a*a)
+
+            resultado.textContent = imc.toFixed(2)
+        }
+
+    </script>
+    <style>
+        body {
+            background-color: olive;
+            font-family: sans-serif ;
+        }
+
+        input {
+            border-radius: 8px;
+            border: 1px solid black;
+            outline: none;
+            padding-left: 7px;
+            height: 25px;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            outline: none;
+            border: 2px solid black;
+            border-radius: 7px;
+            width: 100px;
+            height: 40px;
+        }
+
+        div:nth-child(11) {
+            background-color: rgb(8, 122, 228);
+            color: white;
+            height: 60px;
+            width: 200px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+    <body>
+        <h1>Calcular IMC</h1>
+        
+        <div>
+            <div>
+                <label>Altura:</label>
+            </div>
+            <div>
+                <input type="number" id="altura">
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <div>
+                <label>Peso:</label>
+            </div>
+            <div>
+                <input type="number" id="peso">
+            </div>
+        </div>
+        <br><br>
+        <div>
+            <button onclick="calcIMC()">Calcular</button>
+        </div>
+        <br><br>
+        <div>
+            <h3 id="resultado"></h3>
+        </div>
+    </body>
+</html>
