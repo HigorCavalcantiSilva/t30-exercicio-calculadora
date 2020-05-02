@@ -2,6 +2,8 @@ const express = require('express')
 
 let app = express()
 
+app.use(express.static('public'))
+
 let port = process.env.port
 
 if (port == null || port == ""){
