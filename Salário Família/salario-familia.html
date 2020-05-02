@@ -14,7 +14,7 @@
 
             tot = s + ((s / 100 * 5) * f)
 
-            tot -= tot / 100 * 6
+            tot -= (tot / 100 * 6)
 
             resultado.textContent = "R$ " + String(parseFloat(tot).toFixed(2)).replace(".", ",")
         }
